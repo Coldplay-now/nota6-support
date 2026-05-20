@@ -148,3 +148,62 @@ footer {
 section.links {
     margin-top: 48px;
 }
+
+header.hero {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+header.hero .app-icon {
+    width: 128px;
+    height: 128px;
+    border-radius: 28px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    margin-bottom: 18px;
+}
+
+header.hero h1 {
+    margin-top: 0;
+}
+
+header.hero .version {
+    color: var(--secondary);
+    font-size: 0.9em;
+    margin-top: -4px;
+}
+
+section.screenshots {
+    margin-top: 48px;
+}
+
+.shot-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.shot-grid a {
+    border-bottom: none;
+    display: block;
+    line-height: 0;
+}
+
+.shot-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.shot-grid a:hover img {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 560px) {
+    .shot-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Support — Nota6</title>
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,6 +12,7 @@
     <header>
         <p class="back"><a href="index.html">← Nota6</a></p>
         <h1>Support</h1>
+        <p class="updated">For version 1.2.1</p>
     </header>
 
     <section>
@@ -35,23 +37,53 @@
         <p>By design. Nota6 is a Markdown <em>reader</em>. Use your IDE or a dedicated
         editor (Typora, iA Writer, Obsidian) to write Markdown, and use Nota6 to read it.</p>
 
+        <h3>How do I open the outline / table of contents?</h3>
+        <p>Press <code>⌥⌘O</code> or click the outline icon in the toolbar. The outline
+        scrolls with your reading position; click any heading to jump.</p>
+
+        <h3>How do I hide all the UI for distraction-free reading?</h3>
+        <p>Press <code>⌘.</code> to toggle immersive mode. Press <code>⌘.</code> again
+        to bring the toolbar and sidebars back.</p>
+
+        <h3>Can I share rendered content into Slack / Notion / email?</h3>
+        <p>Yes. Select text in the preview → right-click → <em>Copy as Rendered</em>.
+        Nota6 puts HTML, RTF, and plain text on the clipboard simultaneously, so
+        formatting (headings, code blocks, lists) survives the paste.</p>
+
+        <h3>How do I save a Mermaid diagram or part of the page as an image?</h3>
+        <p>Select any rendered content (or click a Mermaid diagram), then choose
+        <em>Save Selection as PNG…</em> from the share menu or right-click. Output
+        is 2× retina.</p>
+
+        <h3>Mermaid diagrams are too small</h3>
+        <p>Click any Mermaid diagram to open it in a zoomable modal. Scroll to zoom,
+        drag to pan, <code>esc</code> to close.</p>
+
+        <h3>How do I make Nota6 the default app for <code>.md</code> files?</h3>
+        <p>The first time you launch Nota6 without opening a file, the welcome
+        screen offers a one-click "Set as default" button. You can also right-click
+        any <code>.md</code> in Finder → <em>Get Info</em> → <em>Open with</em> → Nota6
+        → <em>Change All…</em>.</p>
+
         <h3>My file isn't refreshing automatically</h3>
-        <p>Make sure "Auto refresh on file change" is enabled in the toolbar's
-        <code>⋯</code> menu. If your editor writes to a temp file and renames it (vim, some
-        editors), Nota6 handles that transparently.</p>
+        <p>Make sure auto-refresh is enabled (toolbar <code>⋯</code> menu). If your
+        editor writes to a temp file and renames it (vim, Cursor, etc.), Nota6 handles
+        that transparently via file-descriptor re-open.</p>
 
         <h3>The folder I picked has no files in the sidebar</h3>
         <p>Nota6 only displays Markdown files (<code>.md</code> /
-        <code>.markdown</code> / <code>.mdx</code>) and hides empty directories. Some
-        common build/cache directories (<code>node_modules</code>, <code>.git</code>,
+        <code>.markdown</code> / <code>.mdx</code>) and hides empty directories.
+        Common build/cache directories (<code>node_modules</code>, <code>.git</code>,
         <code>build</code>, etc.) are always skipped.</p>
 
-        <h3>Mermaid diagram is too small</h3>
-        <p>Click on the diagram to enlarge it (coming in a near update).</p>
+        <h3>Can I run Nota6 from the terminal?</h3>
+        <p>Yes. From the project repo, run <code>bash scripts/install-cli.sh</code> to
+        install a <code>nota6</code> command into <code>/usr/local/bin</code>. Then:
+        <code>nota6 some-file.md</code> or <code>nota6 docs/</code> (folder).</p>
 
         <h3>Where are my recent files / preferences stored?</h3>
         <p>In your standard macOS user defaults. They never leave your Mac. See
-        <a href="privacy.html">privacy policy</a>.</p>
+        <a href="privacy.html">privacy policy</a> for the full list.</p>
     </section>
 
     <section>
@@ -61,15 +93,18 @@
                 <tr><th>Shortcut</th><th>Action</th></tr>
             </thead>
             <tbody>
-                <tr><td>⌘O</td><td>Open file</td></tr>
-                <tr><td>⇧⌘O</td><td>Open folder</td></tr>
-                <tr><td>⌘P</td><td>Quick switcher</td></tr>
-                <tr><td>⌘F</td><td>Find in document</td></tr>
-                <tr><td>⌘R</td><td>Refresh</td></tr>
-                <tr><td>⇧⌘R</td><td>Show in Finder</td></tr>
-                <tr><td>⌘W</td><td>Close file</td></tr>
-                <tr><td>⇧⌘E</td><td>Export as PDF</td></tr>
-                <tr><td>⌥⌘E</td><td>Export as HTML</td></tr>
+                <tr><td><code>⌘O</code></td><td>Open file</td></tr>
+                <tr><td><code>⇧⌘O</code></td><td>Open folder</td></tr>
+                <tr><td><code>⌘P</code></td><td>Quick switcher (workspace files)</td></tr>
+                <tr><td><code>⌥⌘O</code></td><td>Toggle outline panel</td></tr>
+                <tr><td><code>⌘.</code></td><td>Toggle immersive mode</td></tr>
+                <tr><td><code>⌘F</code></td><td>Find in document</td></tr>
+                <tr><td><code>⇧⌘F</code></td><td>Workspace full-text search</td></tr>
+                <tr><td><code>⌘R</code></td><td>Refresh</td></tr>
+                <tr><td><code>⇧⌘R</code></td><td>Show in Finder</td></tr>
+                <tr><td><code>⌘W</code></td><td>Close file</td></tr>
+                <tr><td><code>⇧⌘E</code></td><td>Export as PDF</td></tr>
+                <tr><td><code>⌥⌘E</code></td><td>Export as HTML</td></tr>
             </tbody>
         </table>
     </section>
