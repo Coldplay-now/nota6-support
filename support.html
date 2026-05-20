@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Nota6</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+    <header>
+        <p class="back"><a href="index.html">← Nota6</a></p>
+        <h1>Support</h1>
+    </header>
+
+    <section>
+        <h2>Get in touch</h2>
+        <p>Email: <a href="mailto:okok.galagala@gmail.com">okok.galagala@gmail.com</a></p>
+        <p>Issues / suggestions:
+            <a href="https://github.com/Coldplay-now/nota6/issues">GitHub issues</a></p>
+    </section>
+
+    <section>
+        <h2>System requirements</h2>
+        <ul>
+            <li>macOS 14.0 (Sonoma) or later</li>
+            <li>Apple Silicon or Intel</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Common questions</h2>
+
+        <h3>Why doesn't Nota6 let me edit?</h3>
+        <p>By design. Nota6 is a Markdown <em>reader</em>. Use your IDE or a dedicated
+        editor (Typora, iA Writer, Obsidian) to write Markdown, and use Nota6 to read it.</p>
+
+        <h3>My file isn't refreshing automatically</h3>
+        <p>Make sure "Auto refresh on file change" is enabled in the toolbar's
+        <code>⋯</code> menu. If your editor writes to a temp file and renames it (vim, some
+        editors), Nota6 handles that transparently.</p>
+
+        <h3>The folder I picked has no files in the sidebar</h3>
+        <p>Nota6 only displays Markdown files (<code>.md</code> /
+        <code>.markdown</code> / <code>.mdx</code>) and hides empty directories. Some
+        common build/cache directories (<code>node_modules</code>, <code>.git</code>,
+        <code>build</code>, etc.) are always skipped.</p>
+
+        <h3>Mermaid diagram is too small</h3>
+        <p>Click on the diagram to enlarge it (coming in a near update).</p>
+
+        <h3>Where are my recent files / preferences stored?</h3>
+        <p>In your standard macOS user defaults. They never leave your Mac. See
+        <a href="privacy.html">privacy policy</a>.</p>
+    </section>
+
+    <section>
+        <h2>Keyboard shortcuts</h2>
+        <table>
+            <thead>
+                <tr><th>Shortcut</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>⌘O</td><td>Open file</td></tr>
+                <tr><td>⇧⌘O</td><td>Open folder</td></tr>
+                <tr><td>⌘P</td><td>Quick switcher</td></tr>
+                <tr><td>⌘F</td><td>Find in document</td></tr>
+                <tr><td>⌘R</td><td>Refresh</td></tr>
+                <tr><td>⇧⌘R</td><td>Show in Finder</td></tr>
+                <tr><td>⌘W</td><td>Close file</td></tr>
+                <tr><td>⇧⌘E</td><td>Export as PDF</td></tr>
+                <tr><td>⌥⌘E</td><td>Export as HTML</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer><p>© 2026 Xiaotian LIU</p></footer>
+</main>
+</body>
+</html>
