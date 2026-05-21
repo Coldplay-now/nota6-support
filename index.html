@@ -16,62 +16,88 @@
     <header class="hero">
         <img src="icon-128.png" alt="Nota6 icon" class="app-icon" width="128" height="128">
         <h1>Nota6</h1>
-        <p class="tagline">Markdown reader for the AI era · macOS</p>
-        <p class="version">Version 1.2.1 · macOS 14.0+</p>
+        <p class="tagline">Markdown reader for the AI era · macOS · iPad · iPhone</p>
+        <p class="version">Version 1.2.1 · macOS 14.0+ · iOS 17.0+</p>
     </header>
 
     <section>
-        <p>Nota6 is a <strong>read-only</strong> Markdown previewer for macOS, designed
-        for the moment when AI tools like Cursor, Claude Code, and Copilot generate
-        piles of <code>.md</code> files that need to be <em>read</em>, not edited.</p>
+        <p>Nota6 is a <strong>read-only</strong> Markdown previewer for macOS, iPad
+        and iPhone, designed for the moment when AI tools like Cursor, Claude Code,
+        and Copilot generate piles of <code>.md</code> files that need to be
+        <em>read</em>, not edited.</p>
     </section>
 
     <section>
-        <h2>What 1.2 ships</h2>
+        <h2>What 1.2.1 ships</h2>
 
         <h3>Read fast</h3>
         <ul>
             <li>Double-click a <code>.md</code> → fully rendered page within ~300ms</li>
             <li>Mermaid · KaTeX · highlight.js bundled offline, zero network for rendering</li>
-            <li>4 themes (GitHub / Paper / Notion / Terminal), 4 font sizes, 3 reading widths</li>
-            <li>Per-file scroll position persistence</li>
-            <li>Outline panel (<code>⌥⌘O</code>) with scroll-synced highlight</li>
+            <li>5 themes (GitHub / Paper / Notion / Terminal / <strong>Custom</strong> — pick body + monospace font + 4 colors), 4 font sizes, 3 reading widths</li>
+            <li>Light / Dark / Auto — auto follows system live; Light or Dark force the page regardless</li>
+            <li>Per-file scroll position persistence + per-file reading-progress dots in the workspace sidebar</li>
+            <li>Outline panel (<code>⌥⌘O</code>) with filter + scroll-synced highlight, dockable left or right</li>
+            <li>Floating breadcrumb above the preview when outline is closed</li>
             <li>Immersive mode (<code>⌘.</code>) hides all chrome</li>
-            <li>Mermaid click-to-zoom modal</li>
+            <li>Mermaid + image click-to-zoom modal; right-click / long-press → Copy / Save as PNG</li>
+            <li>Back / Forward (<code>⌘[</code> / <code>⌘]</code>) across internal Markdown links</li>
         </ul>
 
         <h3>AI workflow</h3>
         <ul>
-            <li>Auto-refresh on file change (file watcher)</li>
-            <li>Amber flash when content updates externally — see at a glance what AI just rewrote</li>
+            <li>Auto-refresh on file change (file watcher); atomic-write editors like vim / Cursor handled</li>
+            <li>Diff highlight on auto-refresh — only the blocks that changed get a brief amber flash</li>
+            <li>Smart scroll anchor on auto-refresh — keeps you on the same heading even when length shifts</li>
             <li>Workspace folder browsing with <code>⌘P</code> quick switcher</li>
-            <li>Workspace-wide full-text search (<code>⌘⇧F</code>)</li>
+            <li>Workspace-wide full-text search (<code>⌘⇧F</code>) — macOS</li>
             <li>Internal Markdown links jump within Nota6</li>
+            <li><code>nota6://open?path=…&heading=…</code> deep links: right-click any heading → Copy Link to Section</li>
         </ul>
 
         <h3>Share / export</h3>
         <ul>
             <li>Copy as Rendered (HTML + RTF + Plain — paste into Slack / Notion / email with formatting)</li>
-            <li>Save selection as PNG (2× retina)</li>
-            <li>Paginated PDF export, self-contained HTML export</li>
+            <li>Save selection as PNG (2× retina) on both macOS and iOS</li>
+            <li>PDF / HTML export — async via WKWebView.createPDF, UI never freezes; macOS uses Save panel, iOS uses the system share sheet</li>
         </ul>
 
         <h3>System reach</h3>
         <ul>
-            <li>QuickLook preview plugin (Finder spacebar uses Nota6's renderer)</li>
-            <li><code>nota6</code> CLI: <code>nota6 file.md</code> / <code>nota6 docs/</code></li>
-            <li>URL scheme: <code>nota6://open?path=...</code></li>
+            <li>QuickLook preview plugin (Finder spacebar uses Nota6's renderer) — macOS</li>
+            <li><code>nota6</code> CLI: <code>nota6 file.md</code> / <code>nota6 docs/</code> — macOS</li>
+            <li>URL scheme: <code>nota6://open?path=...[&heading=...]</code> — macOS + iOS</li>
+            <li>macOS Services menu: select text in any app → "Preview as Markdown in Nota6"</li>
+            <li>Optional reopen-last-file-on-launch</li>
             <li>Set as default <code>.md</code> app from the welcome screen</li>
+        </ul>
+
+        <h3>iPad + iPhone (new in 1.2.1)</h3>
+        <ul>
+            <li>Same renderer pipeline as the Mac app — Mermaid, KaTeX, code highlighting, themes all carry over</li>
+            <li>Files / Safari / Mail "Open in Nota6" share-sheet integration</li>
+            <li>Full hardware-keyboard parity on iPad: <code>⌘O</code> / <code>⇧⌘O</code> / <code>⌘F</code> / <code>⌘P</code> / <code>⌥⌘O</code> / <code>⌘R</code> / <code>⌘[</code> / <code>⌘]</code> / <code>⌘W</code>. Press-and-hold <code>⌘</code> for the Discoverability HUD.</li>
+            <li>Status bar with word count + estimated reading time (CJK-aware)</li>
+            <li>Workspace sidebar (iPad) with file filter, pull-to-refresh, per-file reading-progress dots</li>
         </ul>
     </section>
 
     <section class="screenshots">
-        <h2>Screenshots</h2>
+        <h2>Screenshots — macOS</h2>
         <div class="shot-grid">
             <a href="screenshots/screen-1.png"><img src="screenshots/screen-1.png" alt="Nota6 reading view"></a>
             <a href="screenshots/screen-2.png"><img src="screenshots/screen-2.png" alt="Outline panel"></a>
             <a href="screenshots/screen-3.png"><img src="screenshots/screen-3.png" alt="Mermaid diagram"></a>
             <a href="screenshots/screen-4.png"><img src="screenshots/screen-4.png" alt="Workspace browsing"></a>
+        </div>
+    </section>
+
+    <section class="screenshots">
+        <h2>Screenshots — iPad + iPhone</h2>
+        <div class="shot-grid">
+            <a href="screenshots-ios/ipad-01.png"><img src="screenshots-ios/ipad-01.png" alt="Nota6 on iPad — rendered document"></a>
+            <a href="screenshots-ios/ipad-02.png"><img src="screenshots-ios/ipad-02.png" alt="Nota6 iPad welcome screen with keyboard hints"></a>
+            <a href="screenshots-ios/iphone-01.png"><img src="screenshots-ios/iphone-01.png" alt="Nota6 on iPhone — rendered document"></a>
         </div>
     </section>
 
