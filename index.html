@@ -17,7 +17,7 @@
         <img src="icon-128.png" alt="Nota6 icon" class="app-icon" width="128" height="128">
         <h1>Nota6</h1>
         <p class="tagline">Markdown reader for the AI era · macOS · iPad · iPhone</p>
-        <p class="version">Version 1.2.1 · macOS 14.0+ · iOS 17.0+</p>
+        <p class="version">Version 1.6.1 · macOS 14.0+ · iOS 17.0+</p>
     </header>
 
     <section>
@@ -28,9 +28,47 @@
     </section>
 
     <section>
-        <h2>What 1.2.1 ships</h2>
+        <h2>New in 1.6 (since 1.2.1)</h2>
+        <ul>
+            <li><strong>Built-in Reference Library</strong> — 12 curated documents
+                (English + Simplified Chinese, available offline on day one):
+                Markdown / GFM references, Mermaid Diagram Gallery (10 types),
+                KaTeX Math Reference, Code Highlighting Gallery, Reading
+                AI-Generated Markdown, <code>CLAUDE.md</code> / <code>AGENTS.md</code>
+                spec, README / Design Doc patterns, Tips, Keyboard Shortcuts,
+                Themes Showcase. Entry: <em>Browse Library</em> on the welcome
+                screen, plus a sticky <em>Library</em> row at the top of the
+                workspace sidebar.</li>
+            <li><strong>View Source toggle (<code>⌃⌘S</code>)</strong> — flip
+                between rendered preview and raw markdown without leaving the
+                window. Useful for copying snippets exactly or checking what an
+                LLM produced.</li>
+            <li><strong>swift-markdown parser</strong> — Apple's official AST-based
+                CommonMark + GFM parser replaces Ink (was 1.4 → 1.6). Dense
+                LLM-generated documents now parse correctly; inline-text
+                <code>&lt;NUM</code> patterns like <code>&lt;500</code> /
+                <code>&lt;10%</code> no longer collapse the rest of the document
+                into raw text.</li>
+            <li><strong>mac File → New Window (⌘N) + Dock-click reopen</strong> —
+                after closing the main window via the red button, reopen via
+                menu / shortcut / Dock click. (mac convention catch-up.)</li>
+            <li><strong>Instant outline panel</strong> (1.6.1) — outline is
+                computed during markdown parsing on the Swift side, no JS
+                round-trip, no flash of empty panel.</li>
+            <li><strong>Nested code fences render correctly</strong> (1.6.1) — a
+                <code>markdown</code> block containing a <code>mermaid</code>
+                example keeps the inner fence as text instead of misextracting it.</li>
+            <li>Sidebar polish: workspace folder header lifted into the title
+                bar, filter field is a thin-border capsule, focus auto-clears
+                on file pick. Right-click row → <em>Show in Finder</em> /
+                <em>Copy Path</em>.</li>
+            <li>Bundled welcome sample document — one-tap render of Mermaid +
+                KaTeX + code + table + outline for first-launch users.</li>
+        </ul>
+    </section>
 
-        <h3>Read fast</h3>
+    <section>
+        <h2>Core reading</h2>
         <ul>
             <li>Double-click a <code>.md</code> → fully rendered page within ~300ms</li>
             <li>Mermaid · KaTeX · highlight.js bundled offline, zero network for rendering</li>
@@ -50,7 +88,7 @@
             <li>Diff highlight on auto-refresh — only the blocks that changed get a brief amber flash</li>
             <li>Smart scroll anchor on auto-refresh — keeps you on the same heading even when length shifts</li>
             <li>Workspace folder browsing with <code>⌘P</code> quick switcher</li>
-            <li>Workspace-wide full-text search (<code>⌘⇧F</code>) — macOS</li>
+            <li>Workspace-wide full-text search (<code>⌘⇧F</code>) — macOS + iPad</li>
             <li>Internal Markdown links jump within Nota6</li>
             <li><code>nota6://open?path=…&heading=…</code> deep links: right-click any heading → Copy Link to Section</li>
         </ul>
@@ -62,23 +100,26 @@
             <li>PDF / HTML export — async via WKWebView.createPDF, UI never freezes; macOS uses Save panel, iOS uses the system share sheet</li>
         </ul>
 
-        <h3>System reach</h3>
+        <h3>System reach (macOS)</h3>
         <ul>
-            <li>QuickLook preview plugin (Finder spacebar uses Nota6's renderer) — macOS</li>
-            <li><code>nota6</code> CLI: <code>nota6 file.md</code> / <code>nota6 docs/</code> — macOS</li>
-            <li>URL scheme: <code>nota6://open?path=...[&heading=...]</code> — macOS + iOS</li>
+            <li>QuickLook preview plugin (Finder spacebar uses Nota6's renderer)</li>
+            <li>Finder thumbnails for <code>.md</code> files</li>
+            <li><code>nota6</code> CLI: <code>nota6 file.md</code> / <code>nota6 docs/</code></li>
+            <li>URL scheme: <code>nota6://open?path=...[&heading=...]</code></li>
             <li>macOS Services menu: select text in any app → "Preview as Markdown in Nota6"</li>
             <li>Optional reopen-last-file-on-launch</li>
             <li>Set as default <code>.md</code> app from the welcome screen</li>
         </ul>
 
-        <h3>iPad + iPhone (new in 1.2.1)</h3>
+        <h3>iPad + iPhone (universal, 1.6.1)</h3>
         <ul>
             <li>Same renderer pipeline as the Mac app — Mermaid, KaTeX, code highlighting, themes all carry over</li>
+            <li>iCloud sync of reading preferences across iPhone / iPad / Mac</li>
+            <li>App Intents on iPad / iPhone — automate "Open Markdown File" / "Export as HTML" from Shortcuts</li>
             <li>Files / Safari / Mail "Open in Nota6" share-sheet integration</li>
-            <li>Full hardware-keyboard parity on iPad: <code>⌘O</code> / <code>⇧⌘O</code> / <code>⌘F</code> / <code>⌘P</code> / <code>⌥⌘O</code> / <code>⌘R</code> / <code>⌘[</code> / <code>⌘]</code> / <code>⌘W</code>. Press-and-hold <code>⌘</code> for the Discoverability HUD.</li>
+            <li>Full hardware-keyboard parity on iPad: <code>⌘O</code> / <code>⇧⌘O</code> / <code>⌘F</code> / <code>⌘P</code> / <code>⌥⌘O</code> / <code>⌘R</code> / <code>⌘[</code> / <code>⌘]</code> / <code>⌘W</code> / <strong><code>⌃⌘S</code></strong> (View Source). Press-and-hold <code>⌘</code> for the Discoverability HUD.</li>
             <li>Status bar with word count + estimated reading time (CJK-aware)</li>
-            <li>Workspace sidebar (iPad) with file filter, pull-to-refresh, per-file reading-progress dots</li>
+            <li>Workspace sidebar (iPad) with capsule filter field, pull-to-refresh, per-file reading-progress dots, bookmark self-heal</li>
         </ul>
     </section>
 

@@ -12,53 +12,83 @@
     <header>
         <p class="back"><a href="index.html">← Nota6</a></p>
         <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: 2026-05-21 · Applies to version 1.2.1 (macOS + iOS)</p>
+        <p class="updated">Last updated: 2026-05-29 · Applies to version 1.6.1 (macOS + iOS / iPadOS)</p>
     </header>
 
     <section>
         <h2>TL;DR</h2>
-        <p>Nota6 does not collect, transmit, or store any user data. It runs entirely
-        on your Mac and reads only the Markdown files you explicitly open.</p>
+        <p>Nota6 does not collect, transmit, or store any user data on a server we
+        control. It runs entirely on your devices and reads only the Markdown files
+        you explicitly open. Reading preferences sync between your Mac, iPad, and
+        iPhone via your own iCloud account (Apple-managed, opt-out via iCloud system
+        settings).</p>
     </section>
 
     <section>
         <h2>What we collect</h2>
-        <p><strong>Nothing.</strong> Nota6 has no analytics, no telemetry, no crash reporting
-        service, no advertising SDKs, no third-party trackers.</p>
+        <p><strong>Nothing.</strong> Nota6 has no analytics, no telemetry, no crash
+        reporting service, no advertising SDKs, no third-party trackers. We never
+        see your files, your preferences, your usage patterns, or even whether you
+        use the app.</p>
     </section>
 
     <section>
-        <h2>What we store locally</h2>
-        <p>To preserve your settings between launches, Nota6 saves the following to your
-        own Mac (in standard user defaults, never transmitted off-device):</p>
+        <h2>What we store on your device</h2>
+        <p>To preserve your settings between launches, Nota6 saves the following to
+        your own device (in standard user defaults, never transmitted off-device by
+        us):</p>
         <ul>
             <li>Recently opened files and folders (paths only)</li>
             <li>Per-file scroll positions</li>
-            <li>Theme, font size, color scheme, and reading width preferences</li>
-            <li>Outline panel visibility and immersive-mode state</li>
+            <li>Theme, font, font size, color scheme, custom-theme colors, and
+                reading-width preferences</li>
+            <li>Outline panel visibility / side / width, immersive-mode state</li>
             <li>Auto-refresh toggle state</li>
-            <li>"Don't ask again" flags for the welcome / default-app prompts</li>
-            <li>macOS security-scoped bookmarks for folders you grant access to (so they reopen across launches without re-prompting)</li>
+            <li>"Don't ask again" flags for the welcome / default-app / onboarding prompts</li>
+            <li>macOS security-scoped bookmarks for folders you grant access to (so
+                they reopen across launches without re-prompting)</li>
+            <li>iOS UIBookmarkData for files / folders opened via Files / share
+                sheet</li>
+            <li>Bundled Library documents materialized into your Documents / App
+                Support folder (so they appear like real files; deleting them is
+                fine, the welcome screen can re-copy)</li>
         </ul>
-        <p>None of this data ever leaves your Mac. Uninstall removes everything; you can
-        also reset preferences via <code>defaults delete com.coldplay.nota6</code>.</p>
+        <p>None of this data is sent to any server we operate. Uninstall removes
+        everything; on macOS you can also reset preferences via
+        <code>defaults delete com.coldplay.nota6</code>.</p>
+    </section>
+
+    <section>
+        <h2>iCloud sync (optional)</h2>
+        <p>Nota6 uses Apple's <em>NSUbiquitousKeyValueStore</em> to sync your
+        reading preferences (theme, font, color, width, custom-theme colors)
+        between devices that share an iCloud account. This data goes directly
+        between your devices and Apple's iCloud — we never see it, store it, or
+        proxy it. Total payload is a few hundred bytes per device. To opt out,
+        disable iCloud Drive (or just iCloud for Nota6) in System Settings.</p>
+        <p>We do <strong>not</strong> sync: file contents, recent files,
+        bookmarks, scroll positions, or workspace state. Those stay device-local.</p>
     </section>
 
     <section>
         <h2>What we render</h2>
-        <p>Nota6 renders the Markdown files you open. If those files reference remote
-        images (e.g. <code>https://...</code> URLs), the rendering engine (Apple's WebKit)
-        will fetch those images, just as Safari would. We do not proxy, intercept, or log
-        these requests.</p>
-        <p>KaTeX math, Mermaid diagrams, and syntax-highlighted code are rendered locally
-        with libraries bundled inside the app. No network requests are made for rendering.</p>
+        <p>Nota6 renders the Markdown files you open. If those files reference
+        remote images (e.g. <code>https://...</code> URLs), the rendering engine
+        (Apple's WebKit) will fetch those images, just as Safari would. We do not
+        proxy, intercept, or log these requests.</p>
+        <p>KaTeX math, Mermaid diagrams, and syntax-highlighted code are rendered
+        locally with libraries bundled inside the app. The built-in Reference
+        Library (12 documents in English + Simplified Chinese) is bundled inside
+        the app and read locally — no network involved.</p>
+        <p>No network requests are made for rendering or for browsing the Library.</p>
     </section>
 
     <section>
         <h2>Sandbox</h2>
-        <p>Nota6 runs in the macOS App Sandbox with only read-only access to files you
-        explicitly select. It cannot read your other documents, your camera, your
-        microphone, your contacts, or any other resource on your Mac.</p>
+        <p>Nota6 runs in the App Sandbox on both macOS and iOS with only read-only
+        access to files you explicitly select. It cannot read your other documents,
+        your camera, your microphone, your contacts, or any other resource on your
+        device.</p>
     </section>
 
     <section>

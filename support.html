@@ -12,7 +12,7 @@
     <header>
         <p class="back"><a href="index.html">← Nota6</a></p>
         <h1>Support</h1>
-        <p class="updated">For version 1.2.1</p>
+        <p class="updated">For version 1.6.1</p>
     </header>
 
     <section>
@@ -25,8 +25,8 @@
     <section>
         <h2>System requirements</h2>
         <ul>
-            <li>macOS 14.0 (Sonoma) or later</li>
-            <li>Apple Silicon or Intel</li>
+            <li>macOS 14.0 (Sonoma) or later · Apple Silicon or Intel</li>
+            <li>iOS / iPadOS 17.0 or later · iPhone + iPad (universal)</li>
         </ul>
     </section>
 
@@ -37,9 +37,30 @@
         <p>By design. Nota6 is a Markdown <em>reader</em>. Use your IDE or a dedicated
         editor (Typora, iA Writer, Obsidian) to write Markdown, and use Nota6 to read it.</p>
 
+        <h3>What's in the built-in Library?</h3>
+        <p>12 curated documents (English + Simplified Chinese, all offline) available
+        the moment you open Nota6: Markdown / GFM syntax references, Mermaid Diagram
+        Gallery (10 types), KaTeX Math Reference, Code Highlighting Gallery, Reading
+        AI-Generated Markdown, <code>CLAUDE.md</code> / <code>AGENTS.md</code> spec,
+        README / Design Doc patterns, Nota6 Tips, iPad Keyboard Shortcuts, Themes
+        Showcase. Tap <em>Browse Library</em> on the welcome screen or click
+        <em>Library</em> at the top of the workspace sidebar.</p>
+
+        <h3>How do I see the raw markdown source of a document?</h3>
+        <p>Press <code>⌃⌘S</code> or click the <code>&lt;/&gt;</code> toolbar button.
+        Toggles between rendered preview and read-only monospaced source. Tap it
+        again to go back. Useful for copying snippets exactly or checking what an
+        LLM produced.</p>
+
         <h3>How do I open the outline / table of contents?</h3>
         <p>Press <code>⌥⌘O</code> or click the outline icon in the toolbar. The outline
-        scrolls with your reading position; click any heading to jump.</p>
+        scrolls with your reading position; click any heading to jump. As of 1.6.1
+        the outline appears instantly — no flash of empty panel on large documents.</p>
+
+        <h3>I closed the main window on mac and can't get it back</h3>
+        <p>As of 1.6.0 build 64: open the <strong>File</strong> menu — <em>New
+        Window</em> (<code>⌘N</code>) is at the top. Or just click the Nota6 Dock
+        icon — that reopens the window too.</p>
 
         <h3>How do I hide all the UI for distraction-free reading?</h3>
         <p>Press <code>⌘.</code> to toggle immersive mode. Press <code>⌘.</code> again
@@ -81,27 +102,38 @@
         install a <code>nota6</code> command into <code>/usr/local/bin</code>. Then:
         <code>nota6 some-file.md</code> or <code>nota6 docs/</code> (folder).</p>
 
+        <h3>Do my settings sync between Mac, iPad, and iPhone?</h3>
+        <p>Yes. Reading preferences (theme, font, font size, custom-theme colors,
+        reading width) sync via your iCloud account. File contents, recent files,
+        and scroll positions stay device-local. See the
+        <a href="privacy.html">privacy policy</a> for what does and doesn't sync.</p>
+
         <h3>Where are my recent files / preferences stored?</h3>
-        <p>In your standard macOS user defaults. They never leave your Mac. See
+        <p>In standard system user defaults on your device. They never leave your
+        device (except the preferences that go through iCloud). See
         <a href="privacy.html">privacy policy</a> for the full list.</p>
     </section>
 
     <section>
         <h2>Keyboard shortcuts</h2>
+        <p>Same set works on Mac and on iPad with a hardware keyboard.</p>
         <table>
             <thead>
                 <tr><th>Shortcut</th><th>Action</th></tr>
             </thead>
             <tbody>
+                <tr><td><code>⌘N</code></td><td>New Window (mac, 1.6.0+)</td></tr>
                 <tr><td><code>⌘O</code></td><td>Open file</td></tr>
                 <tr><td><code>⇧⌘O</code></td><td>Open folder</td></tr>
                 <tr><td><code>⌘P</code></td><td>Quick switcher (workspace files)</td></tr>
                 <tr><td><code>⌥⌘O</code></td><td>Toggle outline panel</td></tr>
+                <tr><td><code>⌃⌘S</code></td><td><strong>View Source</strong> toggle (1.5+)</td></tr>
                 <tr><td><code>⌘.</code></td><td>Toggle immersive mode</td></tr>
                 <tr><td><code>⌘F</code></td><td>Find in document</td></tr>
                 <tr><td><code>⇧⌘F</code></td><td>Workspace full-text search</td></tr>
                 <tr><td><code>⌘R</code></td><td>Refresh</td></tr>
-                <tr><td><code>⇧⌘R</code></td><td>Show in Finder</td></tr>
+                <tr><td><code>⇧⌘R</code></td><td>Show in Finder (mac)</td></tr>
+                <tr><td><code>⌘[</code> / <code>⌘]</code></td><td>Back / forward (internal links)</td></tr>
                 <tr><td><code>⌘W</code></td><td>Close file</td></tr>
                 <tr><td><code>⇧⌘E</code></td><td>Export as PDF</td></tr>
                 <tr><td><code>⌥⌘E</code></td><td>Export as HTML</td></tr>
